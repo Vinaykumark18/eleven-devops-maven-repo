@@ -1,6 +1,6 @@
 pipeline {
     // add your slave label name
-    agent { label 'my_maven_slave'}
+    agent { label 'slave_node'}
     tools{
         maven 'maven-test'
     }
@@ -16,7 +16,7 @@ pipeline {
         stage ('Build') {
 
             steps {
-               sh 'mvn package'
+               sh 'mvn clean package'
             }
         }
         
